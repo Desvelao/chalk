@@ -2,7 +2,7 @@ package = "chalk"
 version = "dev-1"
 source = {
    url = "git://github.com/Desvelao/chalk",
-   brach = "dev
+   brach = "dev"
 }
 description = {
    summary = [[Create a cli. Status: alpha]],
