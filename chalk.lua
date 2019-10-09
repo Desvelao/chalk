@@ -45,13 +45,4 @@ function chalk(acummulator)
     })
 end
 
-local c = chalk()
-
--- return chalk()
-
-print(c.green('I am a green line ' ..
-c.blue.underline.bold('with a blue substring') ..
-' that becomes green again!'))
-
-print('hello')
-
+return chalk()
