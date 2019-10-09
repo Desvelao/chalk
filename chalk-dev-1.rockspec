@@ -5,7 +5,7 @@ source = {
    branch = "dev"
 }
 description = {
-   summary = [[Create a cli. Status: alpha]],
+   summary = [[Colorize strings to create nice messages in terminal]],
    homepage = "https://github.com/Desvelao/chalk",
    license = "MIT"
 }
@@ -16,8 +16,5 @@ build = {
    type = "builtin",
    modules = {
       chalk = "chalk.lua"
-   },
-   copy_directories = {
-      "docs"
    }
 }
