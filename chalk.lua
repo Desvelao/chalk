@@ -54,7 +54,11 @@ function stylized(style_str)
     end
     local result = chalk()
     for _, sty in ipairs(styles) do
-        result = chalk(result.__accum .. colorize(colors_codes[sty]))
+        if(colors_codes[key] ~= nil) then
+            result = chalk(result.__accum .. colorize(colors_codes[sty]))
+        else
+            error(string.format("chalk key: %s is not valid", tostring(sty)))
+        end
     end
     return result
 end
