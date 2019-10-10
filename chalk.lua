@@ -26,15 +26,17 @@ local function colorize(value)
     return escape_string:format(value)
 end
 
+local stylized 
 function chalk(acummulator)
     acummulator = acummulator or ""
     return setmetatable({},{
         __index = function(t, key)
-            print(key)
             if(colors_codes[key] ~= nil) then
-                return chalk(acummulator..colorize(colors_codes[key]))
-            elseif (key == "__acum") then
+                return chalk(acummulator .. colorize(colors_codes[key]))
+            elseif (key == "__accum") then
                 return acummulator
+            elseif (key == "style") then
+                return stylized
             else
                 error(string.format("chalk key: %s is not valid", tostring(key)))
             end
@@ -43,6 +45,18 @@ function chalk(acummulator)
             return acummulator .. text .. colorize(colors_codes.reset)
         end
     })
+end
+
+function stylized(style_str)
+    local styles = {}
+    for style in string.gmatch(style_str, "%S+") do
+        table.insert(styles, style)
+    end
+    local result = chalk()
+    for _, sty in ipairs(styles) do
+        result = chalk(result.__accum .. colorize(colors_codes[sty]))
+    end
+    return result
 end
 
 return chalk()
