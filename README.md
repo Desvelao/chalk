@@ -1,5 +1,5 @@
 # Chalk for Lua
-Colorize strings to create nice messages in terminal. Usefull for cli apps. It's inspired by JavaScript's [chalk](https://github.com/chalk/chalk).
+Colorize strings to create nice messages in terminal. Usefull for command-line apps. It's inspired by JavaScript's [chalk](https://github.com/chalk/chalk).
 
 # Installation
 ```bash
